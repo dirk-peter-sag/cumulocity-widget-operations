@@ -3,19 +3,24 @@ import {
   EventEmitter,
   Input,
   Output,
-  TemplateRef,
+  TemplateRef
 } from '@angular/core';
-import { IOperationButtonConfig } from '../models/IOperationButtonWidgetConfig';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { IOperationButtonConfig } from '../models/IOperationWidgetConfig';
+
 @Component({
   selector: 'app-button-instance',
   templateUrl: './button-instance.component.html',
+  styleUrls: ['./button-instance.component.scss'],
 })
 export class ButtonInstanceComponent {
   @Input() config: IOperationButtonConfig;
   @Output() clickedOperation = new EventEmitter<IOperationButtonConfig>();
+
   modalRef?: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+
+  constructor(private modalService: BsModalService) { }
+
   createOperation(event: Event): void {
     event.stopPropagation();
     this.clickedOperation.emit(this.config);

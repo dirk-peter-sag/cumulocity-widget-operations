@@ -1,12 +1,12 @@
-<button
-  class="btn"
-  [ngClass]="config?.buttonClasses"
-  [title]="config?.description"
+<textarea name="operationValue" [(ngModel)]="config.operationValue"></textarea>
+
+<button class="btn" [ngClass]="config?.buttonClasses" [title]="config?.description"
   (click)="openModal(confirm, 'modal-sm')">
   <i *ngIf="config?.icon" [c8yIcon]="config.icon"></i>
   {{ config?.label }}
 </button>
 
+<!-- conform dialog -->
 <ng-template #confirm>
   <div class="modal-dialog modal-sm">
     <div class="modal-content">

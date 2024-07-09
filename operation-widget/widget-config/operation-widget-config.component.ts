@@ -35,7 +35,7 @@ export class OperationWidgetConfigComponent {
       operationFragment: 'c8y_Restart',
       buttonClasses: 'btn-default',
       operationValue:
-        '{\n  "operation_name": {}\n  "description": "This is my operation!",\n}',
+        '{\n  "operation_name": {},\n  "description": "This is my operation!"\n}',
       showModal: false,
       modalText: 'Confirm device restart',
       customOperation: false,
